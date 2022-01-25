@@ -1,14 +1,3 @@
-;; -*- no-byte-compile: t; -*-
-;;; $DOOMDIR/packages.el
-
-;; To install a package with Doom you must declare them here and run 'doom sync'
-;; on the command line, then restart Emacs for the changes to take effect -- or
-;; use 'M-x doom/reload'.
-
-
-;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
-;(package! some-package)
-
 ;; To install a package directly from a remote git repo, you must specify a
 ;; `:recipe'. You'll find documentation on what `:recipe' accepts here:
 ;; https://github.com/raxod502/straight.el#the-recipe-format
@@ -47,18 +36,15 @@
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
+
 (package! evil-snipe)
 (package! evil-collection)
 (package! evil-surround)
-
-;(package! org-fancy-priorities)
+(package! org-fancy-priorities)
 (package! org-super-agenda)
 (package! bibtex-completion)
 (package! org-roam-ui)
-
 (package! ox-pandoc)
 (package! simpleclip)
 (package! xclip)
-
 (package! org-download)
-
