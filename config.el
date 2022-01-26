@@ -1,7 +1,7 @@
 ;; identifying information
 (setq user-full-name "Mark Ebeid"
-      user-mail-address "markebeid@pitt.edu"
-      fancy-splash-image (file-truename "~/Sync/notes/emacs-banner.png")
+      user-mail-address "mae117@pitt.edu"
+      fancy-splash-image (file-truename "~/Sync/org/emacs-banner.png")
       doom-theme 'doom-gruvbox
       display-line-numbers-type t
       display-line-numbers-type 'relative
@@ -21,15 +21,12 @@
       org-roam-dailies-directory (file-truename "~/Sync/org/daily/"))
 
 (setq projectile-project-search-path '(org-directory org-roam-directory org-roam-dailies-directory))
-
 (setq org-agenda-files '((file-truename (concat org-directory "inbox.org"))
                          (file-truename (concat org-directory "life/habits/habits.org"))
                          (file-truename (concat org-directory "academics/graduate/research/aims/aims.org"))
                          (file-truename (concat org-directory "academics/graduate/research/dennis/dennis.org"))
                          (file-truename (concat org-directory "academics/graduate/research/idrp.org"))
-                         (file-truename (concat org-directory "academics/graduate/bioZone/bioZone.org"))
-                         ))
-
+                         (file-truename (concat org-directory "academics/graduate/bioZone/bioZone.org"))))
 (after! org
   (setq org-startup-folded t
         org-log-done 'time
@@ -82,8 +79,7 @@
                                   (:name "PROPOSAL" :file-path "aims.org")
                                   (:name "DENNIS" :file-path "dennis.org")
                                   (:name "IDRP" :file-path "idrp.org")
-                                  (:name "BIOZONE" :file-path "bioZone.org")
-                                  )))
+                                  (:name "BIOZONE" :file-path "bioZone.org"))))
 
 (require 'org-download)
 (add-hook 'dired-mode-hook 'org-download-enable)
