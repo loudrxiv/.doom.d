@@ -16,18 +16,18 @@
  '(org-level-4 ((t (:inherit outline-4 :height 1.3))))
  '(org-level-5 ((t (:inherit outline-5 :height 1.0)))))
 
-(setq org-directory (file-truename "~/Sync/notes/")
-      org-roam-directory (file-truename "~/Sync/notes/")
-      org-roam-dailies-directory (file-truename "~/Sync/notes/daily/"))
+(setq org-directory (file-truename "~/Sync/org/")
+      org-roam-directory (file-truename "~/Sync/org/")
+      org-roam-dailies-directory (file-truename "~/Sync/org/daily/"))
 
 (setq projectile-project-search-path '(org-directory org-roam-directory org-roam-dailies-directory))
 
 (setq org-agenda-files '((file-truename (concat org-directory "inbox.org"))
                          (file-truename (concat org-directory "life/habits/habits.org"))
-                         (file-truename (concat org-directory "academics/graduate-cpcb/research/aims.org"))
-                         (file-truename (concat org-directory "academics/graduate-cpcb/research/dennis/general-dennis.org"))
-                         (file-truename (concat org-directory "academics/graduate-cpcb/research/idrp/benchmarking-vaes.org"))
-                         (file-truename (concat org-directory "academics/graduate-cpcb/bioZone/general-bioZone.org"))
+                         (file-truename (concat org-directory "academics/graduate/research/aims/aims.org"))
+                         (file-truename (concat org-directory "academics/graduate/research/dennis/dennis.org"))
+                         (file-truename (concat org-directory "academics/graduate/research/idrp.org"))
+                         (file-truename (concat org-directory "academics/graduate/bioZone/bioZone.org"))
                          ))
 
 (after! org
@@ -80,9 +80,9 @@
   (setq org-super-agenda-groups '((:name "INBOX" :file-path "inbox.org")
                                   (:name "HABITS" :file-path "habits.org")
                                   (:name "PROPOSAL" :file-path "aims.org")
-                                  (:name "DENNIS" :file-path "general-dennis.org")
-                                  (:name "IDRP" :file-path "benchmarking-vaes.org")
-                                  (:name "BIOZONE" :file-path "general-bioZone.org")
+                                  (:name "DENNIS" :file-path "dennis.org")
+                                  (:name "IDRP" :file-path "idrp.org")
+                                  (:name "BIOZONE" :file-path "bioZone.org")
                                   )))
 
 (require 'org-download)
