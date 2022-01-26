@@ -33,6 +33,10 @@
       org-roam-directory (file-truename "~/Sync/org/")
       org-roam-dailies-directory (file-truename "~/Sync/org/daily/"))
 #+end_src
+
+#+RESULTS:
+: /home/moo/Sync/org/daily/
+
 * All Things Org
 ** Org Variables
 #+begin_src elisp

@@ -4,7 +4,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
-   '("~/Sync/notes/life/habits/habits.org" "/home/moo/Sync/notes/academics/graduate-cpcb/research/idrp/benchmarking-vaes.org" "/home/moo/Sync/notes/academics/graduate-cpcb/research/dennis/general-dennis.org" "/home/moo/Sync/notes/academics/graduate-cpcb/research/aims.org" "/home/moo/Sync/notes/academics/graduate-cpcb/bioZone/general-bioZone.org" "/home/moo/Sync/notes/inbox.org"))
+   '("~/Sync/org/academics/graduate/research/idrp.org" "/home/moo/Sync/org/academics/graduate/research/aims/aims.org" "/home/moo/Sync/org/academics/graduate/research/dennis/dennis.org" "/home/moo/Sync/org/academics/graduate/bioZone/bioZone.org" "/home/moo/Sync/org/life/habits/habits.org" "/home/moo/Sync/org/inbox.org"))
  '(package-selected-packages '(conda xclip org-download ox-pandoc evil-snipe)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
