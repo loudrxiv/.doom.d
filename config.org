@@ -9,7 +9,7 @@
 ;; identifying information
 (setq user-full-name "Mark Ebeid"
       user-mail-address "mae117@pitt.edu"
-      fancy-splash-image (file-truename "~/Sync/org/emacs-banner.png")
+      fancy-splash-image (file-truename "~/Cache/Sync/org/emacs-banner.png")
       doom-theme 'doom-gruvbox
       display-line-numbers-type t
       display-line-numbers-type 'relative
@@ -29,13 +29,13 @@
 
 * Setting Directories
 #+begin_src elisp
-(setq org-directory (file-truename "~/Sync/org/")
-      org-roam-directory (file-truename "~/Sync/org/")
-      org-roam-dailies-directory (file-truename "~/Sync/org/daily/"))
+(setq org-directory (file-truename "~/Cache/Sync/org/")
+      org-roam-directory (file-truename "~/Cache/Sync/org/")
+      org-roam-dailies-directory (file-truename "~/Cache/Sync/org/daily/"))
 #+end_src
 
 #+RESULTS:
-: /home/moo/Sync/org/daily/
+: /home/moo/Cache/Sync/org/daily/
 
 * All Things Org
 ** Org Variables

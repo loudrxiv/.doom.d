@@ -1,7 +1,7 @@
 ;; identifying information
 (setq user-full-name "Mark Ebeid"
       user-mail-address "mae117@pitt.edu"
-      fancy-splash-image (file-truename "~/Sync/org/emacs-banner.png")
+      fancy-splash-image (file-truename "~/Cache/Sync/org/emacs-banner.png")
       doom-theme 'doom-gruvbox
       display-line-numbers-type t
       display-line-numbers-type 'relative
@@ -16,9 +16,9 @@
  '(org-level-4 ((t (:inherit outline-4 :height 1.3))))
  '(org-level-5 ((t (:inherit outline-5 :height 1.0)))))
 
-(setq org-directory (file-truename "~/Sync/org/")
-      org-roam-directory (file-truename "~/Sync/org/")
-      org-roam-dailies-directory (file-truename "~/Sync/org/daily/"))
+(setq org-directory (file-truename "~/Cache/Sync/org/")
+      org-roam-directory (file-truename "~/Cache/Sync/org/")
+      org-roam-dailies-directory (file-truename "~/Cache/Sync/org/daily/"))
 
 (setq projectile-project-search-path '(org-directory org-roam-directory org-roam-dailies-directory))
 (setq org-agenda-files '((file-truename (concat org-directory "inbox.org"))
