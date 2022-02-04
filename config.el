@@ -21,65 +21,72 @@
       org-roam-dailies-directory (file-truename "~/Cache/Sync/org/daily/"))
 
 (setq projectile-project-search-path '(org-directory org-roam-directory org-roam-dailies-directory))
-(setq org-agenda-files '((file-truename (concat org-directory "inbox.org"))
-                         (file-truename (concat org-directory "life/habits/habits.org"))
-                         (file-truename (concat org-directory "academics/graduate/research/aims/aims.org"))
-                         (file-truename (concat org-directory "academics/graduate/research/dennis/dennis.org"))
-                         (file-truename (concat org-directory "academics/graduate/research/idrp.org"))
-                         (file-truename (concat org-directory "academics/graduate/bioZone/bioZone.org"))))
+(setq org-agenda-files '("~/Cache/Sync/org/inbox.org"
+                         "~/Cache/Sync/org/academics/graduate/research/aims/aims.org"
+                         "~/Cache/Sync/org/academics/graduate/research/dennis/dennis.org"
+                         "~/Cache/Sync/org/academics/graduate/research/idrp.org"
+                         "~/Cache/Sync/org/academics/graduate/bioZone/bioZone.org"
+                         "~/Cache/Sync/org/life/finances/finances.org"
+                         "~/Cache/Sync/org/life/mental/mental.org"
+                         "~/Cache/Sync/org/life/health/health.org"
+                         "~/Cache/Sync/org/academics/graduate/research/benos.org"
+                         "~/Cache/Sync/org/academics/graduate/courses/evolutionary-biology/evolutionary-biology.org"
+                         "~/Cache/Sync/org/life/professional/software/emacs.org"
+                         "~/Cache/Sync/org/academics/graduate/courses/metaschool/metaschool.org"))
 (after! org
-  (setq org-startup-folded t
-        org-log-done 'time
-        org-modules '(org-habit)
-        org-startup-with-inline-images t
-        org-startup-with-latex-preview t
-        org-preview-latex-default-process 'dvipng
-        org-deadline-warning-days 7
-        org-deadline-past-days 7
-        org-image-actual-width nil
-        org-priority-highest ?A
-        org-priority-lowest ?F
-        org-priority-default ?A
-        org-priority-faces '((?A . 'all-the-icons-red)
-                            (?B . 'all-the-icons-orange)
-                            (?C . 'all-the-icons-lorange)
-                            (?D . 'all-the-icons-yellow)
-                            (?E . 'all-the-icons-lyellow)
-                            (?F . 'all-the-icons-silver))
-        org-fancy-priorities-list '((?A . "1")
-                                    (?B . "2")
-                                    (?C . "3")
-                                    (?D . "4")
-                                    (?E . "5")
-                                    (?F . "6"))))
+ (setq org-startup-folded t
+       org-log-done 'time
+       org-modules '(org-habit)
+       org-startup-with-inline-images t
+       org-startup-with-latex-preview t
+       org-preview-latex-default-process 'dvipng
+       org-deadline-warning-days 7
+       org-deadline-past-days 7
+       org-image-actual-width nil
+       org-priority-highest ?A
+       org-priority-lowest ?F
+       org-priority-default ?A
+       org-priority-faces '((?A . 'all-the-icons-red)
+                           (?B . 'all-the-icons-orange)
+                           (?C . 'all-the-icons-lorange)
+                           (?D . 'all-the-icons-yellow)
+                           (?E . 'all-the-icons-lyellow)
+                           (?F . 'all-the-icons-silver))
+       org-fancy-priorities-list '((?A . "1")
+                                   (?B . "2")
+                                   (?C . "3")
+                                   (?D . "4")
+                                   (?E . "5")
+                                   (?F . "6"))))
 
 (use-package! websocket
-    :after org-roam)
+ :after org-roam)
 
 (org-roam-db-autosync-mode)
 (use-package! org-roam-ui
-    :after org-roam ;; or :after org
-;;         normally we'd recommend hooking orui after org-roam, but since org-roam does not have
-;;         a hookable mode anymore, you're advised to pick something yourself
-;;         if you don't care about startup time, use
-;;  :hook (after-init . org-roam-ui-mode)
-    :config
-    (setq org-roam-ui-sync-theme t
-          org-roam-ui-follow t
-          org-roam-ui-update-on-save t
-          org-roam-ui-open-on-start t))
+ :after org-roam ;; or :after org
+   :config
+   (setq org-roam-ui-sync-theme t
+         org-roam-ui-follow t
+         org-roam-ui-update-on-save t
+         org-roam-ui-open-on-start t))
 
 (require 'org-super-agenda)
 (use-package! org-super-agenda
-  :after org-agenda
-  :config
-  (org-super-agenda-mode)
-  (setq org-super-agenda-groups '((:name "INBOX" :file-path "inbox.org")
-                                  (:name "HABITS" :file-path "habits.org")
-                                  (:name "PROPOSAL" :file-path "aims.org")
-                                  (:name "DENNIS" :file-path "dennis.org")
-                                  (:name "IDRP" :file-path "idrp.org")
-                                  (:name "BIOZONE" :file-path "bioZone.org"))))
+ :after org-agenda
+ :config
+ (org-super-agenda-mode)
+ (setq org-super-agenda-groups '((:name "PROPOSAL" :file-path "aims.org")
+                                 (:name "DENNIS" :file-path "dennis.org")
+                                 (:name "IDRP" :file-path "idrp.org")
+                                 (:name "BIOZONE" :file-path "bioZone.org")
+                                 (:name "FINANCES" :file-path "finances.org")
+                                 (:name "MENTAL" :file-path "mental.org")
+                                 (:name "HEALTH" :file-path "health.org")
+                                 (:name "BENOS" :file-path "benos.org")
+                                 (:name "EVOLBIO" :file-path "evolutionary-biology.org")
+                                 (:name "EMACS" :file-path "emacs.org")
+                                 (:name "METASCHOOL" :file-path "metaschool.org"))))
 
 (require 'org-download)
 (add-hook 'dired-mode-hook 'org-download-enable)
