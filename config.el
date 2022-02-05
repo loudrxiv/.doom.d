@@ -1,6 +1,6 @@
 ;; identifying information
 (setq user-full-name "Mark Ebeid"
-      user-mail-address "mae117@pitt.edu"
+      user-mail-address "mebeid1@umbc.edu"
       fancy-splash-image (file-truename "~/Cache/Sync/org/emacs-banner.png")
       doom-theme 'doom-gruvbox
       display-line-numbers-type t
@@ -36,7 +36,8 @@
 (after! org
  (setq org-startup-folded t
        org-log-done 'time
-       org-modules '(org-habit)
+       org-agenda-span 7
+       org-modules '(ol-bibtex org-habit)
        org-startup-with-inline-images t
        org-startup-with-latex-preview t
        org-preview-latex-default-process 'dvipng
@@ -47,55 +48,47 @@
        org-priority-lowest ?F
        org-priority-default ?A
        org-priority-faces '((?A . 'all-the-icons-red)
-                           (?B . 'all-the-icons-orange)
-                           (?C . 'all-the-icons-lorange)
-                           (?D . 'all-the-icons-yellow)
-                           (?E . 'all-the-icons-lyellow)
-                           (?F . 'all-the-icons-silver))
-       org-fancy-priorities-list '((?A . "1")
+                            (?B . 'all-the-icons-orange)
+                            (?C . 'all-the-icons-lorange)
+                            (?D . 'all-the-icons-yellow)
+                            (?E . 'all-the-icons-lyellow)
+                            (?F . 'all-the-icons-silver))))
+
+(use-package! websocket
+  :after org-roam)
+
+ (use-package! org-roam-ui
+  :after org-roam ;; or :after org
+    :config
+    (setq org-roam-ui-sync-theme t
+          org-roam-ui-follow t
+          org-roam-ui-update-on-save t
+          org-roam-ui-open-on-start t))
+
+ (use-package! org-super-agenda
+  :after org-agenda
+  :config
+  (org-super-agenda-mode)
+  (setq org-super-agenda-groups '((:name "PROPOSAL" :file-path "aims.org")
+                                  (:name "DENNIS" :file-path "dennis.org")
+                                  (:name "IDRP" :file-path "idrp.org")
+                                  (:name "BIOZONE" :file-path "bioZone.org")
+                                  (:name "FINANCES" :file-path "finances.org")
+                                  (:name "MENTAL" :file-path "mental.org")
+                                  (:name "HEALTH" :file-path "health.org")
+                                  (:name "BENOS" :file-path "benos.org")
+                                  (:name "EVOLBIO" :file-path "evolutionary-biology.org")
+                                  (:name "EMACS" :file-path "emacs.org")
+                                  (:name "METASCHOOL" :file-path "metaschool.org"))))
+
+(use-package! org-fancy-priorities
+  :ensure t
+  :hook
+  (org-mode . org-fancy-priorities-mode)
+  :config
+  (setq org-fancy-priorities-list '((?A . "1")
                                    (?B . "2")
                                    (?C . "3")
                                    (?D . "4")
                                    (?E . "5")
                                    (?F . "6"))))
-
-(use-package! websocket
- :after org-roam)
-
-(org-roam-db-autosync-mode)
-(use-package! org-roam-ui
- :after org-roam ;; or :after org
-   :config
-   (setq org-roam-ui-sync-theme t
-         org-roam-ui-follow t
-         org-roam-ui-update-on-save t
-         org-roam-ui-open-on-start t))
-
-(require 'org-super-agenda)
-(use-package! org-super-agenda
- :after org-agenda
- :config
- (org-super-agenda-mode)
- (setq org-super-agenda-groups '((:name "PROPOSAL" :file-path "aims.org")
-                                 (:name "DENNIS" :file-path "dennis.org")
-                                 (:name "IDRP" :file-path "idrp.org")
-                                 (:name "BIOZONE" :file-path "bioZone.org")
-                                 (:name "FINANCES" :file-path "finances.org")
-                                 (:name "MENTAL" :file-path "mental.org")
-                                 (:name "HEALTH" :file-path "health.org")
-                                 (:name "BENOS" :file-path "benos.org")
-                                 (:name "EVOLBIO" :file-path "evolutionary-biology.org")
-                                 (:name "EMACS" :file-path "emacs.org")
-                                 (:name "METASCHOOL" :file-path "metaschool.org"))))
-
-(require 'org-download)
-(add-hook 'dired-mode-hook 'org-download-enable)
-
-(require 'xclip)
-(xclip-mode 1)
-
-(require 'simpleclip)
-(simpleclip-mode 1)
-
-(evil-embrace-enable-evil-surround-integration)
-(add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)

@@ -48,3 +48,4 @@
 (package! simpleclip)
 (package! xclip)
 (package! org-download)
+(package! ssh)

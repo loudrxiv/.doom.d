@@ -4,11 +4,26 @@
 #+TITLE: configuration
 #+AUTHOR: Mark Ebeid
 
+# `load!' for loading external *.el files relative to this one
+# `use-package!' for configuring packages
+# `after!' for running code after a package has loaded
+# `add-load-path!' for adding directories to the `load-path', relative to
+# this file. Emacs searches the `load-path' when you load packages with
+# `require' or `use-package'.
+# `map!' for binding new keys
+
+# To get information about any of these functions/macros, move the cursor over
+# the highlighted symbol at press 'K' (non-evil users must press 'C-c c k').
+# This will open documentation for it, including demos of how they are used.
+
+# You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
+# they are implemented.
+
 * Identifying Information & Themes
 #+begin_src elisp
 ;; identifying information
 (setq user-full-name "Mark Ebeid"
-      user-mail-address "mae117@pitt.edu"
+      user-mail-address "mebeid1@umbc.edu"
       fancy-splash-image (file-truename "~/Cache/Sync/org/emacs-banner.png")
       doom-theme 'doom-gruvbox
       display-line-numbers-type t
@@ -55,7 +70,8 @@
 (after! org
  (setq org-startup-folded t
        org-log-done 'time
-       org-modules '(org-habit)
+       org-agenda-span 7
+       org-modules '(ol-bibtex org-habit)
        org-startup-with-inline-images t
        org-startup-with-latex-preview t
        org-preview-latex-default-process 'dvipng
@@ -66,24 +82,17 @@
        org-priority-lowest ?F
        org-priority-default ?A
        org-priority-faces '((?A . 'all-the-icons-red)
-                           (?B . 'all-the-icons-orange)
-                           (?C . 'all-the-icons-lorange)
-                           (?D . 'all-the-icons-yellow)
-                           (?E . 'all-the-icons-lyellow)
-                           (?F . 'all-the-icons-silver))
-       org-fancy-priorities-list '((?A . "1")
-                                   (?B . "2")
-                                   (?C . "3")
-                                   (?D . "4")
-                                   (?E . "5")
-                                   (?F . "6"))))
+                            (?B . 'all-the-icons-orange)
+                            (?C . 'all-the-icons-lorange)
+                            (?D . 'all-the-icons-yellow)
+                            (?E . 'all-the-icons-lyellow)
+                            (?F . 'all-the-icons-silver))))
 #+end_src
-** Org Packages
+** Package Configuration
  #+begin_src elisp
  (use-package! websocket
   :after org-roam)
 
- (org-roam-db-autosync-mode)
  (use-package! org-roam-ui
   :after org-roam ;; or :after org
     :config
@@ -92,7 +101,6 @@
           org-roam-ui-update-on-save t
           org-roam-ui-open-on-start t))
 
- (require 'org-super-agenda)
  (use-package! org-super-agenda
   :after org-agenda
   :config
@@ -109,17 +117,17 @@
                                   (:name "EMACS" :file-path "emacs.org")
                                   (:name "METASCHOOL" :file-path "metaschool.org"))))
 
- (require 'org-download)
- (add-hook 'dired-mode-hook 'org-download-enable)
-
- (require 'xclip)
- (xclip-mode 1)
-
- (require 'simpleclip)
- (simpleclip-mode 1)
-
- (evil-embrace-enable-evil-surround-integration)
- (add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)
+(use-package! org-fancy-priorities
+  :ensure t
+  :hook
+  (org-mode . org-fancy-priorities-mode)
+  :config
+  (setq org-fancy-priorities-list '((?A . "1")
+                                   (?B . "2")
+                                   (?C . "3")
+                                   (?D . "4")
+                                   (?E . "5")
+                                   (?F . "6"))))
  #+end_src
 
 * Tangling =packages.el=
@@ -175,19 +183,5 @@
 (package! simpleclip)
 (package! xclip)
 (package! org-download)
+(package! ssh)
 #+end_src
-* Notes
-# `load!' for loading external *.el files relative to this one
-# `use-package!' for configuring packages
-# `after!' for running code after a package has loaded
-# `add-load-path!' for adding directories to the `load-path', relative to
-# this file. Emacs searches the `load-path' when you load packages with
-# `require' or `use-package'.
-# `map!' for binding new keys
-
-# To get information about any of these functions/macros, move the cursor over
-# the highlighted symbol at press 'K' (non-evil users must press 'C-c c k').
-# This will open documentation for it, including demos of how they are used.
-
-# You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
-# they are implemented.
