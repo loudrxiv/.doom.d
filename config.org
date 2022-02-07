@@ -64,6 +64,7 @@
                          "~/Cache/Sync/org/life/mental/mental.org"
                          "~/Cache/Sync/org/life/health/health.org"
                          "~/Cache/Sync/org/academics/graduate/research/benos.org"
+                         "~/Cache/Sync/org/academics/graduate/research/akira/akira.org"
                          "~/Cache/Sync/org/academics/graduate/courses/evolutionary-biology/evolutionary-biology.org"
                          "~/Cache/Sync/org/life/professional/software/emacs.org"
                          "~/Cache/Sync/org/academics/graduate/courses/metaschool/metaschool.org"))
@@ -115,6 +116,7 @@
                                   (:name "BENOS" :file-path "benos.org")
                                   (:name "EVOLBIO" :file-path "evolutionary-biology.org")
                                   (:name "EMACS" :file-path "emacs.org")
+                                  (:name "AKIRA" :file-path "akira.org")
                                   (:name "METASCHOOL" :file-path "metaschool.org"))))
 
 (use-package! org-fancy-priorities
