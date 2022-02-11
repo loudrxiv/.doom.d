@@ -45,6 +45,11 @@
        org-deadline-warning-days 7
        org-deadline-past-days 7
        org-image-actual-width nil
+       org-pomodoro-length 30
+       org-pomodoro-short-break-length 10
+       org-pomodoro-long-break-length 15
+       ;org-pomodoro-manual-break t
+
        org-priority-highest ?A
        org-priority-lowest ?F
        org-priority-default ?A
@@ -94,3 +99,5 @@
                                    (?D . "4")
                                    (?E . "5")
                                    (?F . "6"))))
+
+(load! "/home/moo/.doom.d/org-pomodoro-third-time/org-pomodoro-third-time.el")

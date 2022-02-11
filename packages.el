@@ -49,3 +49,4 @@
 (package! xclip)
 (package! org-download)
 (package! ssh)
+(package! org-pomodoro)
