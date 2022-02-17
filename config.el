@@ -33,7 +33,8 @@
                          "~/Cache/Sync/org/academics/graduate/research/akira/akira.org"
                          "~/Cache/Sync/org/academics/graduate/courses/evolutionary-biology/evolutionary-biology.org"
                          "~/Cache/Sync/org/life/professional/software/emacs.org"
-                         "~/Cache/Sync/org/academics/graduate/courses/metaschool/metaschool.org"))
+                         "~/Cache/Sync/org/academics/graduate/courses/metaschool/metaschool.org"
+                         "~/Cache/Sync/org/academics/graduate/research/jason/schema/schema.org"))
 (after! org
  (setq org-startup-folded t
        org-log-done 'time
@@ -86,7 +87,8 @@
                                   (:name "EVOLBIO" :file-path "evolutionary-biology.org")
                                   (:name "EMACS" :file-path "emacs.org")
                                   (:name "AKIRA" :file-path "akira.org")
-                                  (:name "METASCHOOL" :file-path "metaschool.org"))))
+                                  (:name "METASCHOOL" :file-path "metaschool.org")
+                                  (:name "METASCHOOL" :file-path "schema.org"))))
 
 (use-package! org-fancy-priorities
   :ensure t
