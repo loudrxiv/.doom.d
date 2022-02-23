@@ -19,6 +19,7 @@
 (setq org-directory (file-truename "~/Cache/Sync/org/")
       org-roam-directory (file-truename "~/Cache/Sync/org/")
       org-roam-dailies-directory (file-truename "~/Cache/Sync/org/daily/"))
+(defvar logseq-directory "~/Cache/Sync/org/logseq")
 
 (setq projectile-project-search-path '(org-directory org-roam-directory org-roam-dailies-directory))
 (setq org-agenda-files '("~/Cache/Sync/org/inbox.org"
@@ -88,7 +89,7 @@
                                   (:name "EMACS" :file-path "emacs.org")
                                   (:name "AKIRA" :file-path "akira.org")
                                   (:name "METASCHOOL" :file-path "metaschool.org")
-                                  (:name "METASCHOOL" :file-path "schema.org"))))
+                                  (:name "JASON" :file-path "schema.org"))))
 
 (use-package! org-fancy-priorities
   :ensure t
@@ -103,3 +104,4 @@
                                    (?F . "6"))))
 
 (load! "/home/moo/.doom.d/org-pomodoro-third-time/org-pomodoro-third-time.el")
+(load! "/home/moo/.doom.d/org-logseq/org-logseq.el")

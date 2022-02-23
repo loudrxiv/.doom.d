@@ -161,7 +161,8 @@
        ;;php
        plantuml
        ;;purescript
-       (python +conda)
+       ;(python +conda)
+       (python)
        ;;qt
        ;;racket
        ;;raku
