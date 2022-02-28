@@ -46,7 +46,7 @@
 (setq org-agenda-files '("~/Cache/Sync/org/inbox.org"
                          "~/Cache/Sync/org/academics/graduate/research/aims/aims.org"
                          "~/Cache/Sync/org/academics/graduate/research/dennis/dennis.org"
-                         "~/Cache/Sync/org/academics/graduate/research/idrp.org"
+                         "~/Cache/Sync/org/academics/graduate/research/haiyi/haiyi.org"
                          "~/Cache/Sync/org/academics/graduate/bioZone/bioZone.org"
                          "~/Cache/Sync/org/life/finances/finances.org"
                          "~/Cache/Sync/org/life/mental/mental.org"
@@ -56,7 +56,8 @@
                          "~/Cache/Sync/org/academics/graduate/courses/evolutionary-biology/evolutionary-biology.org"
                          "~/Cache/Sync/org/life/professional/software/emacs.org"
                          "~/Cache/Sync/org/academics/graduate/courses/metaschool/metaschool.org"
-                         "~/Cache/Sync/org/academics/graduate/research/jason/schema/schema.org"))
+                         "~/Cache/Sync/org/academics/graduate/research/jason/schema/schema.org"
+                         "~/Cache/Sync/org/life/habits/habits.org"))
 
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
@@ -104,7 +105,7 @@
   (org-super-agenda-mode)
   (setq org-super-agenda-groups '((:name "PROPOSAL" :file-path "aims.org")
                                   (:name "DENNIS" :file-path "dennis.org")
-                                  (:name "IDRP" :file-path "idrp.org")
+                                  (:name "IDRP" :file-path "haiyi.org")
                                   (:name "BIOZONE" :file-path "bioZone.org")
                                   (:name "FINANCES" :file-path "finances.org")
                                   (:name "MENTAL" :file-path "mental.org")
@@ -114,7 +115,8 @@
                                   (:name "EMACS" :file-path "emacs.org")
                                   (:name "AKIRA" :file-path "akira.org")
                                   (:name "METASCHOOL" :file-path "metaschool.org")
-                                  (:name "JASON" :file-path "schema.org"))))
+                                  (:name "JASON" :file-path "schema.org")
+                                  (:name "HABITS" :file-path "habits.org"))))
 
 (use-package! org-fancy-priorities
   :ensure t
