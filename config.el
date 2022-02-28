@@ -18,7 +18,28 @@
 
 (setq org-directory (file-truename "~/Cache/Sync/org/")
       org-roam-directory (file-truename "~/Cache/Sync/org/")
-      org-roam-dailies-directory (file-truename "~/Cache/Sync/org/daily/"))
+      org-roam-dailies-directory (file-truename "~/Cache/Sync/org/daily/")
+
+      ;; org-ref
+      bibtex-completion-bibliography '("~/Cache/Sync/org/academics/graduate/research/master.org"
+                                      "~/Cache/Sync/org/academics/graduate/research/akira/akira.org"
+                                      "~/Cache/Sync/org/academics/graduate/research/dennis/dennis.org"
+                                      "~/Cache/Sync/org/academics/graduate/research/jason/jason.org"
+                                      "~/Cache/Sync/org/academics/graduate/research/haiyi/haiyi.org")
+      bibtex-completion-library-path '("~/Cache/Sync/org/academics/graduate/research/pdfs"
+                                      "~/Cache/Sync/org/academics/graduate/research/akira/akira-safe/pdfs"
+                                      "~/Cache/Sync/org/academics/graduate/research/dennis/dennis-safe/pdfs"
+                                      "~/Cache/Sync/org/academics/graduate/research/jason/jason-safe/pdfs"
+                                      "~/Cache/Sync/org/academics/graduate/research/haiyi/haiyi-safe/pdfs")
+      bibtex-completion-notes-path "~/Cache/Sync/org/academics/graduate/research/notes.org")
+
+(require 'org-ref-helm)
+(setq org-ref-insert-link-function 'org-ref-insert-link-hydra/body
+      org-ref-insert-cite-function 'org-ref-cite-insert-helm
+      org-ref-insert-label-function 'org-ref-insert-label-link
+      org-ref-insert-ref-function 'org-ref-insert-ref-link
+      org-ref-cite-onclick-function (lambda (_) (org-ref-citation-hydra/body)))
+
 (defvar logseq-directory "~/Cache/Sync/org/logseq")
 
 (setq projectile-project-search-path '(org-directory org-roam-directory org-roam-dailies-directory))
@@ -36,6 +57,10 @@
                          "~/Cache/Sync/org/life/professional/software/emacs.org"
                          "~/Cache/Sync/org/academics/graduate/courses/metaschool/metaschool.org"
                          "~/Cache/Sync/org/academics/graduate/research/jason/schema/schema.org"))
+
+(setq org-clock-persist 'history)
+(org-clock-persistence-insinuate)
+
 (after! org
  (setq org-startup-folded t
        org-log-done 'time
@@ -103,5 +128,11 @@
                                    (?E . "5")
                                    (?F . "6"))))
 
+(use-package org-roam-bibtex
+  :after org-roam
+  :config
+  (require 'org-ref)) ; optional: if using Org-ref v2 or v3 citation links
+
 (load! "/home/moo/.doom.d/org-pomodoro-third-time/org-pomodoro-third-time.el")
 (load! "/home/moo/.doom.d/org-logseq/org-logseq.el")
+(load! "/home/moo/.doom.d/org-habit-report/org-habit-report.el")

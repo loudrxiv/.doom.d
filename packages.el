@@ -50,3 +50,6 @@
 (package! org-download)
 (package! ssh)
 (package! org-pomodoro)
+(package! org-roam-bibtex)
+(package! helm-bibtex)
+(package! org-ref)
