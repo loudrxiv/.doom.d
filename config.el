@@ -5,7 +5,7 @@
       doom-theme 'doom-gruvbox
       display-line-numbers-type t
       display-line-numbers-type 'relative
-      doom-unicode-font (font-spec :family "Julia Mono" :size 12 :weight 'semi-light)
+      doom-unicode-font (font-spec :family "Inconsolata" :size 16 :weight 'light)
       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
 ;; headline size
@@ -18,46 +18,13 @@
 
 (setq org-directory (file-truename "~/Cache/Sync/org/")
       org-roam-directory (file-truename "~/Cache/Sync/org/")
-      org-roam-dailies-directory (file-truename "~/Cache/Sync/org/daily/")
-
-      ;; org-ref
-      bibtex-completion-bibliography '("~/Cache/Sync/org/academics/graduate/research/master.org"
-                                      "~/Cache/Sync/org/academics/graduate/research/akira/akira.org"
-                                      "~/Cache/Sync/org/academics/graduate/research/dennis/dennis.org"
-                                      "~/Cache/Sync/org/academics/graduate/research/jason/jason.org"
-                                      "~/Cache/Sync/org/academics/graduate/research/haiyi/haiyi.org")
-      bibtex-completion-library-path '("~/Cache/Sync/org/academics/graduate/research/pdfs"
-                                      "~/Cache/Sync/org/academics/graduate/research/akira/akira-safe/pdfs"
-                                      "~/Cache/Sync/org/academics/graduate/research/dennis/dennis-safe/pdfs"
-                                      "~/Cache/Sync/org/academics/graduate/research/jason/jason-safe/pdfs"
-                                      "~/Cache/Sync/org/academics/graduate/research/haiyi/haiyi-safe/pdfs")
-      bibtex-completion-notes-path "~/Cache/Sync/org/academics/graduate/research/notes.org")
-
-(require 'org-ref-helm)
-(setq org-ref-insert-link-function 'org-ref-insert-link-hydra/body
-      org-ref-insert-cite-function 'org-ref-cite-insert-helm
-      org-ref-insert-label-function 'org-ref-insert-label-link
-      org-ref-insert-ref-function 'org-ref-insert-ref-link
-      org-ref-cite-onclick-function (lambda (_) (org-ref-citation-hydra/body)))
+      org-roam-dailies-directory (file-truename "~/Cache/Sync/org/daily/"))
 
 (defvar logseq-directory "~/Cache/Sync/org/logseq")
 
 (setq projectile-project-search-path '(org-directory org-roam-directory org-roam-dailies-directory))
-(setq org-agenda-files '("~/Cache/Sync/org/inbox.org"
-                         "~/Cache/Sync/org/academics/graduate/research/aims/aims.org"
-                         "~/Cache/Sync/org/academics/graduate/research/dennis/dennis.org"
-                         "~/Cache/Sync/org/academics/graduate/research/haiyi/haiyi.org"
-                         "~/Cache/Sync/org/academics/graduate/bioZone/bioZone.org"
-                         "~/Cache/Sync/org/life/finances/finances.org"
-                         "~/Cache/Sync/org/life/mental/mental.org"
-                         "~/Cache/Sync/org/life/health/health.org"
-                         "~/Cache/Sync/org/academics/graduate/research/benos.org"
-                         "~/Cache/Sync/org/academics/graduate/research/akira/akira.org"
-                         "~/Cache/Sync/org/academics/graduate/courses/evolutionary-biology/evolutionary-biology.org"
-                         "~/Cache/Sync/org/life/professional/software/emacs.org"
-                         "~/Cache/Sync/org/academics/graduate/courses/metaschool/metaschool.org"
-                         "~/Cache/Sync/org/academics/graduate/research/jason/schema/schema.org"
-                         "~/Cache/Sync/org/life/habits/habits.org"))
+
+(setq org-agenda-files '("~/Cache/Sync/org/inbox.org"))
 
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
@@ -73,11 +40,6 @@
        org-deadline-warning-days 7
        org-deadline-past-days 7
        org-image-actual-width nil
-       org-pomodoro-length 30
-       org-pomodoro-short-break-length 10
-       org-pomodoro-long-break-length 15
-       ;org-pomodoro-manual-break t
-
        org-priority-highest ?A
        org-priority-lowest ?F
        org-priority-default ?A
@@ -103,20 +65,7 @@
   :after org-agenda
   :config
   (org-super-agenda-mode)
-  (setq org-super-agenda-groups '((:name "PROPOSAL" :file-path "aims.org")
-                                  (:name "DENNIS" :file-path "dennis.org")
-                                  (:name "IDRP" :file-path "haiyi.org")
-                                  (:name "BIOZONE" :file-path "bioZone.org")
-                                  (:name "FINANCES" :file-path "finances.org")
-                                  (:name "MENTAL" :file-path "mental.org")
-                                  (:name "HEALTH" :file-path "health.org")
-                                  (:name "BENOS" :file-path "benos.org")
-                                  (:name "EVOLBIO" :file-path "evolutionary-biology.org")
-                                  (:name "EMACS" :file-path "emacs.org")
-                                  (:name "AKIRA" :file-path "akira.org")
-                                  (:name "METASCHOOL" :file-path "metaschool.org")
-                                  (:name "JASON" :file-path "schema.org")
-                                  (:name "HABITS" :file-path "habits.org"))))
+  (setq org-super-agenda-groups '((:auto-group t))))
 
 (use-package! org-fancy-priorities
   :ensure t
@@ -130,11 +79,6 @@
                                    (?E . "5")
                                    (?F . "6"))))
 
-(use-package org-roam-bibtex
-  :after org-roam
-  :config
-  (require 'org-ref)) ; optional: if using Org-ref v2 or v3 citation links
+(beacon-mode 1)
 
-(load! "/home/moo/.doom.d/org-pomodoro-third-time/org-pomodoro-third-time.el")
-(load! "/home/moo/.doom.d/org-logseq/org-logseq.el")
-(load! "/home/moo/.doom.d/org-habit-report/org-habit-report.el")
+;;(load! "/home/moo/.doom.d/org-habit-report/org-habit-report.el")

@@ -36,7 +36,6 @@
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
-
 (package! evil-snipe)
 (package! evil-collection)
 (package! evil-surround)
@@ -49,7 +48,5 @@
 (package! xclip)
 (package! org-download)
 (package! ssh)
-(package! org-pomodoro)
-(package! org-roam-bibtex)
-(package! helm-bibtex)
-(package! org-ref)
+(package! beacon)
+(package! nano-theme)
