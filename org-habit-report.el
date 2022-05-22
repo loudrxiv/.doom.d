@@ -119,5 +119,3 @@
   (insert (ol/habit-stats-to-string
            (org-map-entries (lambda () (ol/habit-report params)) "STYLE=\"habit\"" ol/scope)))
   (org-table-align))
-
-(provide 'org-habit-report)
