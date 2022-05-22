@@ -89,7 +89,7 @@
        ;;ansible
        debugger
        ;;direnv
-       ;;docker
+       docker
        ;;editorconfig
        ein
        (eval +overlay)
@@ -120,14 +120,14 @@
        ;;coq
        ;;crystal
        ;;csharp
-       data
+       ;;data
        ;;(dart +flutter)
        ;;dhall
        ;;elixir
        ;;elm
-       emacs-lisp
+       ;;emacs-lisp
        ;;erlang
-       (ess +lintr)
+       ;;(ess +lintr)
        ;;factor
        ;;faust
        ;;fsharp
@@ -159,10 +159,10 @@
 	    )
 
        ;;php
-       plantuml
+       ;;plantuml
        ;;purescript
        ;(python +conda)
-       (python)
+       ;;(python)
        ;;qt
        ;;racket
        ;;raku
@@ -175,24 +175,24 @@
        sh
        ;;sml
        ;;solidity
-       swift
+       ;;swift
        ;;terra
        ;;web
        ;;yaml
        ;;zig
 
        :email
-       (mu4e +org +gmail)
+       ;;(mu4e +org +gmail)
        ;;notmuch
        ;;(wanderlust +gmail)
 
        :app
-       calendar
-       emms
+       ;;calendar
+       ;;emms
        ;;everywhere        ; *leave* Emacs!? You must be joking
        ;;irc               ; how neckbeards socialize
-       (rss +org)        ; emacs as an RSS reader
-       twitter           ; twitter client https://twitter.com/vnought
+       ;;(rss +org)        ; emacs as an RSS reader
+       ;;twitter           ; twitter client https://twitter.com/vnought
 
        :config
        literate
