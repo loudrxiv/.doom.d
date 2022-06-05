@@ -24,10 +24,16 @@
 
 (setq projectile-project-search-path '(org-directory org-roam-directory org-roam-dailies-directory))
 
-(setq org-agenda-files '("~/Cache/Sync/org/inbox.org"))
+(setq org-agenda-files '("~/Cache/Sync/org/inbox.org"
+                         "~/Cache/Sync/org/daily"
+                         "~/Cache/Sync/org/habits.org"
+                         )
+      )
 
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
+
+(setq org-habit-following-days 1)
 
 (after! org
  (setq org-startup-folded t
@@ -48,9 +54,12 @@
                             (?C . 'all-the-icons-lorange)
                             (?D . 'all-the-icons-yellow)
                             (?E . 'all-the-icons-lyellow)
-                            (?F . 'all-the-icons-silver))))
+                            (?F . 'all-the-icons-silver)
+                            )
+       )
+ )
 
-(use-package! websocket
+ (use-package! websocket
   :after org-roam)
 
  (use-package! org-roam-ui
@@ -65,7 +74,11 @@
   :after org-agenda
   :config
   (org-super-agenda-mode)
-  (setq org-super-agenda-groups '((:auto-group t))))
+  (setq org-super-agenda-groups '((:auto-group t)
+                                  ;'(:habit t)
+                                  )
+        )
+  )
 
 (use-package! org-fancy-priorities
   :ensure t
@@ -81,4 +94,4 @@
 
 (beacon-mode 1)
 
-;;(load! "/home/moo/.doom.d/org-habit-report/org-habit-report.el")
+(load! "~/.doom.d/org-habit-report.el")

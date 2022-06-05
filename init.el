@@ -159,7 +159,7 @@
 	    )
 
        ;;php
-       ;;plantuml
+       plantuml
        ;;purescript
        ;(python +conda)
        ;;(python)
