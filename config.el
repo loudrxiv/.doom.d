@@ -25,7 +25,7 @@
 (setq projectile-project-search-path '(org-directory org-roam-directory org-roam-dailies-directory))
 
 (setq org-agenda-files '("~/Cache/Sync/org/inbox.org"
-                         "~/Cache/Sync/org/daily"
+                         ;"~/Cache/Sync/org/daily"
                          "~/Cache/Sync/org/habits.org"
                          )
       )
@@ -33,7 +33,9 @@
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
 
-(setq org-habit-following-days 1)
+(setq org-habit-following-days 1
+      org-habit-preceding-days 7)
+
 
 (after! org
  (setq org-startup-folded t
@@ -59,7 +61,7 @@
        )
  )
 
- (use-package! websocket
+(use-package! websocket
   :after org-roam)
 
  (use-package! org-roam-ui
