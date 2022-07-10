@@ -36,7 +36,6 @@
 (setq org-habit-following-days 1
       org-habit-preceding-days 7)
 
-
 (after! org
  (setq org-startup-folded t
        org-log-done 'time
