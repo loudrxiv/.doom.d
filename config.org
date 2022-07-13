@@ -59,7 +59,7 @@
 
 (setq org-agenda-files '("~/Cache/Sync/org/inbox.org"
                          "~/Cache/Sync/org/daily"
-                         ;"~/Cache/Sync/org/habits.org"
+                         "~/Cache/Sync/org/habits.org"
                          )
       )
 
@@ -120,7 +120,7 @@
   :config
   (org-super-agenda-mode)
   (setq org-super-agenda-groups '((:auto-group t)
-                                  ;(:habit t)
+                                  (:habit t)
                                   )
         )
   )
@@ -139,9 +139,6 @@
 
 (beacon-mode 1)
  #+end_src
-
- #+RESULTS:
- : t
 
 * Tangling =packages.el=
 #+begin_src elisp :tangle packages.el

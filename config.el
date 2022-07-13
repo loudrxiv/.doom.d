@@ -26,7 +26,7 @@
 
 (setq org-agenda-files '("~/Cache/Sync/org/inbox.org"
                          "~/Cache/Sync/org/daily"
-                         ;"~/Cache/Sync/org/habits.org"
+                         "~/Cache/Sync/org/habits.org"
                          )
       )
 
@@ -76,7 +76,7 @@
   :config
   (org-super-agenda-mode)
   (setq org-super-agenda-groups '((:auto-group t)
-                                  ;(:habit t)
+                                  (:habit t)
                                   )
         )
   )
