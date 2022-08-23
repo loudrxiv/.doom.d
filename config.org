@@ -24,11 +24,13 @@
 (setq user-full-name "Mark Ebeid"
       user-mail-address "mebeid1@umbc.edu"
       fancy-splash-image (file-truename "~/Cache/Sync/org/emacs-banner.png")
-      doom-theme 'doom-gruvbox
+      ;doom-theme 'doom-gruvbox
       display-line-numbers-type t
       display-line-numbers-type 'relative
       doom-unicode-font (font-spec :family "Inconsolata" :size 16 :weight 'light)
       doom-variable-pitch-font (font-spec :family "sans" :size 13))
+
+(load-theme 'nano-dark t)
 
 ;; headline size
 (custom-set-faces
