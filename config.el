@@ -5,12 +5,12 @@
       ;doom-theme 'doom-gruvbox
       display-line-numbers-type t
       display-line-numbers-type 'relative
-      doom-unicode-font (font-spec :family "Inconsolata" :size 16 :weight 'light)
-      doom-variable-pitch-font (font-spec :family "sans" :size 13))
+      doom-unicode-font (font-spec :family "Fira Code" :size 14 :weight 'light)
+      doom-variable-pitch-font (font-spec :family "Fira Code" :size 14 :weight 'light))
 
 (load-theme 'nano-dark t)
 
-;; headline size
+; headline size
 (custom-set-faces
  '(org-level-1 ((t (:inherit outline-1 :height 2.1))))
  '(org-level-2 ((t (:inherit outline-2 :height 1.8))))
