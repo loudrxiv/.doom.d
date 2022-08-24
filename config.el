@@ -5,8 +5,8 @@
       ;doom-theme 'doom-gruvbox
       display-line-numbers-type t
       display-line-numbers-type 'relative
-      doom-unicode-font (font-spec :family "Fira Code" :size 14 :weight 'light)
-      doom-variable-pitch-font (font-spec :family "Fira Code" :size 14 :weight 'light))
+      doom-unicode-font (font-spec :family "Source Code Pro Light" :size 14 :weight 'light)
+      doom-variable-pitch-font (font-spec :family "Source Code Pro Light" :size 14 :weight 'light))
 
 (load-theme 'nano-dark t)
 
