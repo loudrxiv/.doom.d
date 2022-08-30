@@ -23,7 +23,7 @@
 ;; identifying information
 (setq user-full-name "Mark Ebeid"
       user-mail-address "mebeid1@umbc.edu"
-      fancy-splash-image (file-truename "~/Cache/Sync/org/emacs-banner.png")
+      fancy-splash-image (file-truename "~/brain/sync/org/emacs-banner.png")
       ;doom-theme 'doom-gruvbox
       display-line-numbers-type t
       display-line-numbers-type 'relative
@@ -44,11 +44,11 @@
 
 * Setting directories
 #+begin_src elisp
-(setq org-directory (file-truename "~/Cache/Sync/org/")
-      org-roam-directory (file-truename "~/Cache/Sync/org/")
-      org-roam-dailies-directory (file-truename "~/Cache/Sync/org/daily/"))
+(setq org-directory (file-truename "~/brain/sync/org/")
+      org-roam-directory (file-truename "~/brain/sync/org/")
+      org-roam-dailies-directory (file-truename "~/brain/sync/org/daily/"))
 
-(defvar logseq-directory "~/Cache/Sync/org/logseq")
+(defvar logseq-directory "~/brain/sync/org/logseq")
 #+end_src
 
 #+RESULTS:
@@ -59,9 +59,9 @@
 #+begin_src elisp
 (setq projectile-project-search-path '(org-directory org-roam-directory org-roam-dailies-directory))
 
-(setq org-agenda-files '("~/Cache/Sync/org/inbox.org"
-                         "~/Cache/Sync/org/daily"
-                         "~/Cache/Sync/org/habits.org"
+(setq org-agenda-files '("~/brain/sync/org/inbox.org"
+                         "~/brain/sync/org/daily"
+                         "~/brain/sync/org/habits.org"
                          )
       )
 
