@@ -82,7 +82,7 @@
 
        :checkers
        (syntax +childframe)
-       (spell +hunspell +flyspell +everywhere)
+       (spell +hunspell +everywhere)
        grammar
 
        :tools
