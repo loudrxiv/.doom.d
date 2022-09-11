@@ -49,4 +49,3 @@
 (package! org-download)
 (package! ssh)
 (package! beacon)
-(package! nano-theme)

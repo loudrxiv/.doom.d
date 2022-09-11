@@ -24,13 +24,11 @@
 (setq user-full-name "Mark Ebeid"
       user-mail-address "mebeid1@umbc.edu"
       fancy-splash-image (file-truename "~/brain/sync/org/emacs-banner.png")
-      ;doom-theme 'doom-gruvbox
+      doom-theme 'doom-gruvbox
       display-line-numbers-type t
       display-line-numbers-type 'relative
       doom-unicode-font (font-spec :family "Source Code Pro Light" :size 14 :weight 'light)
       doom-variable-pitch-font (font-spec :family "Source Code Pro Light" :size 14 :weight 'light))
-
-(load-theme 'nano-dark t)
 
 ; headline size
 (custom-set-faces
@@ -196,7 +194,6 @@
 (package! org-download)
 (package! ssh)
 (package! beacon)
-(package! nano-theme)
 #+end_src
 * =.els= from elsewhere
 #+begin_src elisp
