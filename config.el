@@ -94,5 +94,7 @@
                                    (?F . "6"))))
 
 (beacon-mode 1)
+;(gnuserv-start)
 
 (load! "~/.doom.d/org-habit-report.el")
+;(load! "gnuserv")

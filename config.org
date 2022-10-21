@@ -1,4 +1,4 @@
-:PROPERTIES:
+
 :ID:       8ce01dea-49da-4116-b246-f41ac7e2e9e6
 :END:
 #+TITLE: configuration
@@ -138,6 +138,7 @@
                                    (?F . "6"))))
 
 (beacon-mode 1)
+;(gnuserv-start)
  #+end_src
 
 * Tangling =packages.el=
@@ -198,6 +199,7 @@
 * =.els= from elsewhere
 #+begin_src elisp
 (load! "~/.doom.d/org-habit-report.el")
+;(load! "gnuserv")
 #+end_src
 #+RESULTS:
 : t
